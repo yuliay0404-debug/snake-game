@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Snake</title>
+    <title>贪吃蛇</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <main class="app">
-      <section class="game-shell" aria-label="Snake game">
+      <section class="game-shell" aria-label="贪吃蛇游戏">
         <header class="hud">
           <div>
-            <p class="eyebrow">Classic Snake</p>
-            <h1>Snake</h1>
+            <p class="eyebrow">经典小游戏</p>
+            <h1>贪吃蛇</h1>
           </div>
           <div class="stats">
-            <p>Score: <span id="score">0</span></p>
-            <p>Status: <span id="status">Ready</span></p>
+            <p>分数：<span id="score">0</span></p>
+            <p>状态：<span id="status">准备开始</span></p>
           </div>
         </header>
 
         <div class="actions">
-          <button id="start-button" type="button">Start</button>
-          <button id="pause-button" type="button">Pause</button>
-          <button id="restart-button" type="button">Restart</button>
+          <button id="start-button" type="button">开始</button>
+          <button id="pause-button" type="button">暂停</button>
+          <button id="restart-button" type="button">重新开始</button>
         </div>
 
         <div class="settings">
-          <label for="speed-select">Speed</label>
-          <select id="speed-select" aria-label="Snake speed">
-            <option value="200">Slow</option>
-            <option value="140" selected>Normal</option>
-            <option value="90">Fast</option>
+          <label for="speed-select">速度</label>
+          <select id="speed-select" aria-label="贪吃蛇速度">
+            <option value="200">慢速</option>
+            <option value="140" selected>正常</option>
+            <option value="90">快速</option>
           </select>
         </div>
 
@@ -40,31 +40,30 @@
             id="board"
             class="board"
             role="grid"
-            aria-label="Snake board"
+            aria-label="贪吃蛇棋盘"
           ></div>
           <div id="overlay" class="overlay" aria-live="polite">
-            Press Start to play
+            点击开始游戏
           </div>
         </section>
 
-        <section class="controls" aria-label="Touch controls">
-          <button data-direction="up" type="button" aria-label="Move up">Up</button>
+        <section class="controls" aria-label="触屏控制">
+          <button data-direction="up" type="button" aria-label="向上移动">上</button>
           <div class="controls-row">
-            <button data-direction="left" type="button" aria-label="Move left">
-              Left
+            <button data-direction="left" type="button" aria-label="向左移动">
+              左
             </button>
-            <button data-direction="down" type="button" aria-label="Move down">
-              Down
+            <button data-direction="down" type="button" aria-label="向下移动">
+              下
             </button>
-            <button data-direction="right" type="button" aria-label="Move right">
-              Right
+            <button data-direction="right" type="button" aria-label="向右移动">
+              右
             </button>
           </div>
         </section>
 
         <p class="help">
-          Use arrow keys or WASD to move. Eat food to grow. Avoid walls and your
-          own tail.
+          用键盘方向键或 WASD 控制移动。吃到食物会变长，撞墙或撞到自己就会结束。
         </p>
       </section>
     </main>
