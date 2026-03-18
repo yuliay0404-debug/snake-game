@@ -172,11 +172,11 @@ h1 {
   margin-top: 16px;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
 }
 
 .controls-row {
-  gap: 10px;
+  gap: 14px;
 }
 
 .help {
@@ -207,5 +207,36 @@ h1 {
 
   .actions {
     flex-wrap: wrap;
+  }
+
+  .controls {
+    margin-top: 20px;
+    gap: 16px;
+  }
+
+  .controls button {
+    min-width: 88px;
+    min-height: 60px;
+    padding: 16px 20px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    touch-action: manipulation;
+  }
+
+  .controls-row {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .controls button {
+    min-width: 96px;
+    min-height: 68px;
+    padding: 18px 24px;
+    font-size: 1.1rem;
+  }
+
+  .controls-row {
+    gap: 18px;
   }
 }
