@@ -1,0 +1,211 @@
+:root {
+  color-scheme: light;
+  --bg: #f3efe6;
+  --panel: #fffaf1;
+  --line: #d7ccbb;
+  --text: #2a241d;
+  --muted: #73685b;
+  --snake: #2d6a4f;
+  --snake-head: #1f4e3b;
+  --food: #c44536;
+  --cell: #efe7da;
+  --accent: #8b6f47;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.game-shell {
+  width: min(100%, 560px);
+  background: var(--panel);
+  border: 2px solid var(--line);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(90, 74, 52, 0.08);
+}
+
+.hud,
+.actions,
+.settings,
+.controls,
+.controls-row {
+  display: flex;
+}
+
+.hud {
+  justify-content: space-between;
+  gap: 16px;
+  align-items: end;
+  margin-bottom: 16px;
+}
+
+.eyebrow,
+.stats p,
+.help {
+  margin: 0;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+h1 {
+  margin: 4px 0 0;
+  font-size: 2rem;
+}
+
+.stats {
+  text-align: right;
+}
+
+.actions {
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.settings {
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.settings label {
+  font-weight: 600;
+}
+
+.settings select {
+  font: inherit;
+  color: var(--text);
+  background: #f8f0e1;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 10px 14px;
+}
+
+.actions button,
+.controls button {
+  border: 1px solid var(--accent);
+  background: #f8f0e1;
+  color: var(--text);
+  border-radius: 999px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.actions button:hover,
+.controls button:hover {
+  background: #f2e6d0;
+}
+
+.board-wrap {
+  position: relative;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(16, minmax(0, 1fr));
+  gap: 2px;
+  background: var(--line);
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+.cell {
+  background: var(--cell);
+}
+
+.cell.snake {
+  background: var(--snake);
+}
+
+.cell.head {
+  background: var(--snake-head);
+}
+
+.cell.food {
+  background: var(--food);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 24px;
+  color: var(--text);
+  font-weight: 700;
+  background: rgba(255, 250, 241, 0.78);
+  border-radius: 12px;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.controls {
+  margin-top: 16px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.controls-row {
+  gap: 10px;
+}
+
+.help {
+  margin-top: 16px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+@media (min-width: 721px) {
+  .controls {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .game-shell {
+    padding: 16px;
+  }
+
+  .hud {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .stats {
+    text-align: left;
+  }
+
+  .actions {
+    flex-wrap: wrap;
+  }
+}
